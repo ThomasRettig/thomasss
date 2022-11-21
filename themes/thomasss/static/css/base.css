@@ -1,0 +1,95 @@
+:root {
+	--font-text: system-ui;
+	--font-display: "Ginto Nord", "Cooper Black", system-ui;
+	--color-gray-100: #f2f2f2;
+	--color-gray-200: #eee;
+	--color-gray-300: #ccc;
+	--color-gray-400: #ddd;
+	--color-gray-500: #666;
+	--color-gray-600: #222;
+	--color-black: #000;
+}
+
+@font-face {
+	font-family: "Ginto Nord";
+	font-display: swap;
+	font-weight: 700;
+	src: url("../fonts/ginto-nord-black.woff2") format("woff2");
+}
+
+::selection {
+	background-color: var(--color-gray-400);
+	color: var(--color-black);
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	align-items: center;
+	align-content: center;
+	column-gap: 2vmin;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+	padding: 0 10vmin;
+	margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+h1 {
+	color: var(--color-black);
+	font-family: var(--font-display);
+	font-size: clamp(36px, 10vw, 50px);
+	line-height: 1;
+}
+
+h2, p {
+	color: var(--color-black);
+	font-family: var(--font-text);
+	font-size: 20px;
+}
+
+p {
+	margin-top: 2vmin;
+}
+
+h2 {
+	line-height: 1.2;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: #aaa;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+a:hover {
+	color: var(--color-black);
+	text-decoration-color: var(--color-gray-500);
+}
+
+.text-opacity-75 {
+	opacity: 75%;
+}
+
+.text-larger {
+	font-size: clamp(25px, 6vw, 30px);
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.leading-tight {
+	letter-spacing: -0.5px;
+}
+
+.mt-2 {
+	margin-top: 2.5vmin;
+}

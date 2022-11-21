@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <base target="_blank">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>{{ .Title }}</title>
+        <!--Assets-->
+        <link rel="stylesheet" href="{{ absURL "css/base.css" }}">
+        <link rel="stylesheet" href="{{ absURL "css/index.css" }}">
+        <link rel="preload" as="font" type="font/woff2" href="{{ absURL "fonts/ginto-nord-black.woff2" }}" crossorigin>
+        <link rel="icon" href="{{ absURL "images/waving-hand.webp" }}">
+        <style>
+	        @media screen and (max-width: 849px) {
+	        	body {
+	        		padding: 6vmin 10vmin;
+	        	}
+
+	        	section:nth-of-type(2) {
+	        		padding: 15px;
+	        	}
+
+	        	img {
+	        		width: 50px;
+	        	}
+	        }
+        </style>
+        <!--Search engines-->
+        <meta name="author" content="Thomas Rettig">
+        <meta name="description" content="Welcome to my personal homepage! Find out more about me over here!">
+        <meta name="keywords" content="Thomas Rettig, website, links">
+        <!--OpenGraph-->
+        <meta property="og:title" content="Thomas Rettig’s homepage">
+        <meta property="og:site_name" content="Thomas Rettig">
+        <meta property="og:url" content="https://thomasss.netlify.app/">
+        <meta property="og:description" content="Welcome to my personal homepage! Find out more about me over here!">
+        <meta property="og:type" content="website">
+        <!--Twitter-->
+        <meta name="twitter:site" content="@thomasrettig13">
+        <meta name="twitter:creator" content="@thomasrettig13">
+    </head>
+    <body>
+        <section>
+			<h1><img src="images/waving-hand.webp" alt="Waving hand emoji" aria-label="👋" draggable="false"><br>Hi, I’m Thomas!</h1>
+			<p>I love design, code, and music. You&nbsp;can find me on <a href="https://instagram.com/thmsrttg">Instagram</a>, <a href="https://twitter.com/ThomasRettig13">Twitter</a>, and <a href="https://github.com/thomasrettig">Github</a>.</p>
+			<div class="mt-2">
+				<h2>Recent blog posts</h2>
+				{{ range ( where .Site.RegularPages "Type" "posts" | first 3 ) }}
+				  <li><a href="{{ .Permalink }}">{{ .Title }}</a></li>
+				{{end}}
+			</div>
+		</section>
+		<section>
+			<h2><span class="text-opacity-75 font-medium font-monospace">Sign up for</span><br><span class="text-larger leading-tight">Musical Musings</span></h2>
+			<p>It’s a sporadic newsletter where I share songs I&nbsp;love, along with an accompanying description.</p>
+			<form action="https://buttondown.email/api/emails/embed-subscribe/thms" method="post" target="popupwindow" onsubmit="window.open('https://buttondown.email/thms', 'popupwindow')">
+			  <input type="email" name="email" placeholder="Your email address" aria-label="Email address" required>
+			  <input type="submit" value="Subscribe!" class="font-medium" aria-label="Subscribe">
+			</form>
+        </section>
+    </body>
+</html>
