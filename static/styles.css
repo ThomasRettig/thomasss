@@ -1,0 +1,203 @@
+:root {
+	--font-text: system-ui;
+	--font-display: "Ginto Nord", "Cooper Black", system-ui;
+	--color-gray-100: #f2f2f2;
+	--color-gray-200: #eee;
+	--color-gray-300: #ccc;
+	--color-gray-400: #ddd;
+	--color-gray-500: #666;
+	--color-gray-600: #222;
+	--color-black: #000;
+}
+
+@font-face {
+	font-family: "Ginto Nord";
+	font-weight: 700;
+	font-display: swap;
+	src: url("fonts/ginto-nord-black.woff2") format("woff2");
+}
+
+@keyframes tada {
+	from {
+		transform: scale3d(1, 1, 1);
+	}
+
+	10%, 20% {
+		transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -5deg);
+	}
+
+	30%, 50%, 70%, 90% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 5deg);
+	}
+
+	40%, 60%, 80% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -5deg);
+	}
+
+	to {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+::selection {
+	background-color: var(--color-gray-400);
+	color: var(--color-black);
+}
+
+html {
+	-webkit-text-size-adjust: 100%;
+}
+
+body {
+	align-items: center;
+	align-content: center;
+	column-gap: 2vmin;
+	display: flex;
+	flex-wrap: wrap;
+	min-height: 100vh;
+	padding: 0 10vmin;
+	margin: 0;
+}
+
+section {
+	margin: 10px 0;
+}
+
+section:first-of-type {
+	max-width: 325px;
+}
+
+section:nth-of-type(2) {
+	background-color: var(--color-gray-100);
+	border: 1px solid var(--color-gray-400);
+	border-radius: 3px;
+	box-shadow: 0 0 15px 0px var(--color-gray-100);
+	padding: 25px;
+	max-width: 390px;
+}
+
+form {
+	align-items: flex-start;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 3vmin 0;
+	margin-top: 15px;
+}
+
+a {
+	color: inherit;
+	text-decoration-color: #aaa;
+	text-decoration-thickness: 1px;
+	text-underline-offset: 2px;
+}
+
+a:hover {
+	color: var(--color-black);
+	text-decoration-color: var(--color-gray-500);
+}
+
+input {
+	appearance: none;
+	border: none;
+	border-radius: 3px;
+	font-size: 18px;
+	font-family: var(--font-text);
+	padding: 5px 12px;
+}
+
+input[type="email"] {
+	outline: 1.5px solid var(--color-gray-400);
+	width: 100%;
+}
+
+input[type="submit"] {
+	background-color: var(--color-gray-600);
+	color: var(--color-gray-100);
+	cursor: pointer;
+}
+
+input[type="submit"]:hover, input[type="submit"]:active {
+	background-color: var(--color-black);
+}
+
+input:focus {
+	outline: 1.5px solid var(--color-gray-500);
+}
+
+input:-webkit-autofill {
+    box-shadow: 0 0 0 30px white inset;
+}
+
+input::placeholder {
+	color: var(--color-gray-500);
+	user-select: none;
+}
+
+h1, h2, p {
+	margin: 0;
+	margin-bottom: 2.5vmin;
+}
+
+h1 {
+	color: var(--color-black);
+	font-family: var(--font-display);
+	font-size: clamp(36px, 10vw, 50px);
+	line-height: 1;
+}
+
+h2, p {
+	color: var(--color-black);
+	font-family: var(--font-text);
+	font-size: 20px;
+}
+
+h2 {
+	line-height: 1.2;
+}
+
+img {
+	animation: tada 1s;
+	width: 60px;
+	height: auto;
+}
+
+.text-opacity-75 {
+	opacity: 75%;
+}
+
+.text-larger {
+	font-size: clamp(25px, 6vw, 30px);
+}
+
+.font-medium {
+	font-weight: 500;
+}
+
+.leading-tight {
+	letter-spacing: -0.5px;
+}
+
+@media screen and (min-width: 850px) {
+	body {
+		justify-content: center;
+	}
+
+	form {
+		flex-wrap: nowrap;
+		gap: 0 1.5vmin;
+	}
+}
+
+@media screen and (max-width: 849px) {
+	body {
+		padding: 6vmin 10vmin;
+	}
+
+	section:nth-of-type(2) {
+		padding: 15px;
+	}
+
+	img {
+		width: 50px;
+	}
+}
